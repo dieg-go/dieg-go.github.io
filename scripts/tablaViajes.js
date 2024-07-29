@@ -137,7 +137,10 @@ function inicializarTabla() {
                 data: "estado",
                 render: function (data) {
                     let estadoInfo = getEstadoInfo(data);
-                    return `<button type="button" class="btn btn-sm w-75 btn-${estadoInfo.class} btnMostrarErrorCruce"><i class="${estadoInfo.icon}"></i> ${data}</button>`;
+                    return `<button type="button" class="btn btn-sm btn-${estadoInfo.class} btnMostrarErrorCruce" style="padding: 0; border: none; background: none;">
+                            <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;">${data}</span>
+                            <img src="assets/estados/${estadoInfo.icon}" style="width: 40px; height: 40px;" alt="${data}" />
+                    </button>`;
                 },
             },
             { data: null, defaultContent: '<button type="button" class="btn btn-outline-primary btnMostrarAdjuntos"><i class="fas fa-paperclip"></i></button>' },
@@ -177,19 +180,19 @@ function inicializarTabla() {
 function getEstadoInfo(estado) {
     switch (estado) {
         case "Sin Siem":
-            return { class: "secondary", icon: "fa-solid fa-file-circle-question" };
+            return { class: "secondary", icon: "sin siem.png" };
         case "Cruza Con SIEM":
-            return { class: "success", icon: "fa fa-check" };
+            return { class: "success", icon: "cruce de datos ok.png" };
         case "IFOPTRX":
-            return { class: "info", icon: "fas fa-sync" };
+            return { class: "info", icon: "ifoptrx.png" };
         case "IFOPING":
-            return { class: "info", icon: "fa fa-database" };
+            return { class: "info", icon: "ifoping.png" };
         case "Bloqueado":
-            return { class: "warning", icon: "fa fa-lock" };
+            return { class: "warning", icon: "bloqueado.png" };
         case "Migrando":
-            return { class: "info", icon: "fa fa-exchange" };
+            return { class: "info", icon: "migrando.png" };
         case "Error de cruce":
-            return { class: "danger", icon: "fa-solid fa-shuffle" };
+            return { class: "danger", icon: "error de cruce.png" };
 
         default:
             return { class: "secondary", icon: "fas fa-question-circle" };
