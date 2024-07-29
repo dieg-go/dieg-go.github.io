@@ -1,0 +1,91 @@
+<div class="collapse" id="collapseFiltrosGrilla">
+    <div class="card">
+        <div class="form-row d-flex justify-content-around m-2">
+            <!-- Base de datos -->
+            <div class="mx-1 form-group">
+                <label for="dbSelect" class="form-label">Base de datos</label>
+                <select class="form-control" id="dbSelect" aria-label="Base de datos">
+                    <option selected>IFOPTRX</option>
+                    <option value="2">IFOPING (1 mes)</option>
+                    <option value="3">IFOPING (2 meses)</option>
+                </select>
+            </div>
+            <!-- Nombre Barco -->
+            <div class="mx-1 form-group">
+                <label for="selectBarco">Barco</label>
+                <select class="form-control" name="selectBarco" id="selectBarco">
+                    <option selected>Todos</option>
+                    <option>ABDON I</option>
+                    <option>CAROLINA I</option>
+                    <option>CONSTITUCION</option>
+                    <option>COY II</option>
+                    <option>MAR TERCERO</option>
+                    <option>PELICANO</option>
+                </select>
+            </div>
+
+            <!-- Lugar Muestreo -->
+            <div class="mx-1 form-group">
+                <label for="selectLugarMuestreo">Lugar Muestreo</label>
+                <select class="form-control" name="selectLugarMuestreo" id="selectLugarMuestreo">
+                    <option selected>Todos</option>
+                    <option>TIERRA</option>
+                    <option>MAR</option>
+                </select>
+            </div>
+
+            <!-- Fechas -->
+            <div class="mx-1 form-group">
+                <label>Rango Fechas Recalada:</label>
+                <div class="input-group">
+                    <input type="text" class="form-control float-right" name="tablaViajesRangoFechasRecalada" />
+                </div>
+            </div>
+            <div class="mx-1 form-group">
+                <label>Rango Fechas Recepcion:</label>
+                <div class="input-group">
+                    <input type="text" class="form-control float-right" name="tablaViajesRangoFechaRecepcion" />
+                </div>
+            </div>
+
+            <!-- Estado -->
+            <div class="mx-1 form-select">
+                <label for="estadoSelect" class="form-label">Estado</label>
+                <select class="form-control" id="estadoSelect" aria-label="Estado">
+                    <option selected>Todos</option>
+                    <option value="2">Bloqueado</option>
+                    <option value="3">Error de cruce</option>
+                    <option value="4">Cruza Con SIEM</option>
+                    <option value="5">En Validacion</option>
+                    <option value="6">ifoping</option>
+                    <option value="7">Cargando</option>
+                    <option value="8">Eliminando</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card card-body">
+    <div class="table-responsive">
+        <table class="table table-hover table-sm my-3" id="tablaViajes">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Codigo Barco</th>
+                    <th>Nombre Barco</th>
+                    <th>Fecha Hora Recalada</th>
+                    <th>Lugar Muestreo</th>
+                    <th>Recepcion</th>
+                    <th>Estado</th>
+                    <th>Adjuntos</th>
+                    <!-- <th>SIEM-e</th> -->
+                    <th>Acciones</th>
+                    <th>Datos Biologicos</th>
+                    <th>XML-MP</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>

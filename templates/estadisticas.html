@@ -1,0 +1,136 @@
+<div class="collapse" id="collapseFiltrosEstadisticas">
+    <div class="card">
+        <div class="form-row d-flex justify-content-around m-2">
+            <!-- Flotas -->
+            <div class="mx-1 form-select">
+                <label for="fleetSelect" class="form-label">Flotas</label>
+                <select class="form-control" id="fleetSelect" aria-label="Flotas">
+                    <option selected>Todos</option>
+                    <option value="2">CONSTITUCION</option>
+                    <option value="3">PELICANO</option>
+                    <option value="4">ABDON I</option>
+                    <option value="5">MAR TERCERO</option>
+                </select>
+            </div>
+
+            <!-- Puertos -->
+            <div class="mx-1 form-select">
+                <label for="portSelect" class="form-label">Puertos</label>
+                <select class="form-control" id="portSelect" aria-label="Puertos">
+                    <option selected>Todos</option>
+                    <option value="8">Antofagasta</option>
+                    <option value="11">Iquique</option>
+                    <option value="4">Valparaiso</option>
+                    <option value="5">San Antonio</option>
+                    <option value="6">San Vicente</option>
+                </select>
+            </div>
+
+            <!-- Especies -->
+            <div class="mx-1 form-select">
+                <label for="speciesSelect" class="form-label">Especies</label>
+                <select class="form-control" id="speciesSelect" aria-label="Especies">
+                    <option selected>Todos</option>
+                    <option value="1">Lenguado</option>
+                    <option value="2">Pez Crolo</option>
+                    <option value="3">Rosca</option>
+                    <option value="4">Torita</option>
+                    <option value="5">Pez Espada</option>
+                </select>
+            </div>
+
+            <!-- Fechas -->
+            <div class="mx-1 form-group">
+                <label>Rango Fechas:</label>
+                <div class="input-group">
+                    <!-- <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="far fa-calendar-alt"></i>
+                        </span>
+                    </div> -->
+                    <input type="text" class="form-control float-right" name="estadisticasRangoFechas" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row h-100">
+    <div class="col-md-3 border-end">
+        <div class="d-flex flex-column h-100">
+            <div class="card card-body">
+                <h5>Viajes</h5>
+
+                <canvas id="viajesMuestreadosChart" height="300"></canvas>
+
+                <div class="progress-group mt-3">
+                    N° Viajes mes:
+                    <span class="float-right"><b>8</b>/5</span>
+                    <div class="progress progress-sm">
+                        <div class="progress-bar bg-primary" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 border-end">
+        <div class="d-flex flex-column h-100">
+            <div class="card card-body">
+                <h5>Muestreos</h5>
+                <canvas id="muestreosChart" height="300"></canvas>
+                <div class="progress-group mt-3">
+                    Longitud:
+                    <span class="float-right"><b>15</b>/10</span>
+                    <div class="progress progress-sm">
+                        <div class="progress-bar bg-primary" style="width: 150%"></div>
+                    </div>
+                </div>
+                <div class="progress-group">
+                    Biologico:
+                    <span class="float-right"><b>6</b>/6</span>
+                    <div class="progress progress-sm">
+                        <div class="progress-bar bg-warning" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div class="progress-group">
+                    Proporcion:
+                    <span class="float-right"><b>7</b>/8</span>
+                    <div class="progress progress-sm">
+                        <div class="progress-bar" style="width: 87.5%; background-color: rgb(75, 192, 192)"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="d-flex flex-column h-100">
+            <div class="card card-body">
+                <h5>Individuos</h5>
+                <canvas id="indMuestreadosChart" height="300"></canvas>
+                <div class="progress-group mt-3">
+                    N° Ind Long:
+                    <span class="float-right"><b>910</b>/500</span>
+                    <div class="progress progress-sm">
+                        <div class="progress-bar bg-primary" style="width: 182%"></div>
+                    </div>
+                </div>
+                <div class="progress-group">
+                    N° Ind Bio:
+                    <span class="float-right"><b>210</b>/250</span>
+                    <div class="progress progress-sm">
+                        <div class="progress-bar bg-warning" style="width: 84%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="d-flex flex-column h-100">
+            <div class="card card-body">
+                <h5>Estados</h5>
+                <canvas id="estadosChart" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+    
+</div>
