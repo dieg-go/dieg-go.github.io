@@ -205,12 +205,12 @@
 
                     <nav class="mt-2">
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                            <!-- <li class="nav-item">
+                            <li class="nav-item">
                                 <a href="#" class="nav-link" data-toggle="collapse" data-target="cardBodyCumplimiento" id="btnCumplimiento">
                                     <i class="nav-icon fas fa-clipboard-check"></i>
                                     <p>Cumplimiento</p>
                                 </a>
-                            </li> -->
+                            </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link" data-toggle="collapse" data-target="cardBodyEstadisticas" id="btnEstadisticas">
                                     <i class="nav-icon fas fa-chart-line"></i>
@@ -242,23 +242,44 @@
                 <div class="content">
                     <div class="container-fluid">
                         
-                            <div class="card card-outline card-primary" id="cardEstadisticas" style="display: none">
-                                <div class="card-header">
-                                    <h5 class="card-title">Estadisticas Generales</h5>
-                                    <div class="card-tools">
-                                        <button class="btn btn-tool" type="button" data-toggle="collapse" data-target="#collapseFiltrosEstadisticas" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-filter"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                        <div class="row">
+                            <div class="col-md-auto">
+                                <div class="card card-outline card-primary" id="cardEstadisticas" style="display: none">
+                                    <div class="card-header">
+                                        <h5 class="card-title">Estadisticas Generales</h5>
+                                        <div class="card-tools">
+                                            <button class="btn btn-tool" type="button" data-toggle="collapse" data-target="#collapseFiltrosEstadisticas" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-filter"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="card-body" id="cardBodyEstadisticas"></div>
+                                    <div class="card-body" id="cardBodyEstadisticas"></div>
+                                </div>
                             </div>
-                        
+                            <div class="col-md-auto">
+                                <div class="card card-outline card-primary" id="cardCumplimiento" style="display: none">
+                                    <div class="card-header">
+                                        <h5 class="card-title">Cumplimiento</h5>
+                                        <div class="card-tools">
+                                            <button class="btn btn-tool" type="button" data-toggle="collapse" data-target="#collapseFiltrosEstadisticas" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-filter"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body" id="cardBodyCumplimiento"></div>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="card card-outline card-primary">
                             <div class="card-header">
