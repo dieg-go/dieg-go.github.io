@@ -1,10 +1,12 @@
 function mostrarAdminViaje () {
   const modalTitle = document.querySelector("#infoModal .modal-title");
+  const modalHeader = document.querySelector("#infoModal .modal-header");
   const modalBody = document.querySelector("#infoModal .modal-body");
 
-  modalTitle.innerHTML = "Detalle";
+
+  /*modalTitle.innerHTML = "Detalle";
   modalBody.innerHTML = `
-      <div class="container">
+        
         <div class="mb-3">
           <label for="actionSelect" class="form-label">Acciones</label>
           <select class="form-select form-select-lg" name="actionSelect" id="actionSelect">
@@ -21,7 +23,6 @@ function mostrarAdminViaje () {
           </select>
         </div>
         <div id="dynamicContent" class="mt-3"></div>
-      </div>
     `;
 
   const actionSelect = document.getElementById("actionSelect");
@@ -35,7 +36,7 @@ function mostrarAdminViaje () {
 
     <input type="hidden" name="accion" value="copiar">
 
-    <table class="table table-bordered tabla_blanca letra_small">
+    <table class="table table-bordered table-sm table-hover">
       <tbody><tr>
         <th></th>
         <th>Viaje actual</th>
@@ -74,7 +75,7 @@ function mostrarAdminViaje () {
       case "modificarLlaveViaje":
         content = `
 
-        <table class="table table-bordered tabla_blanca letra_small">
+        <table class="table table-bordered table-sm table-hover">
           <tbody><tr>
             <th></th>
             <th>Viaje actual</th>
@@ -115,7 +116,7 @@ function mostrarAdminViaje () {
         break;
       case "eliminar":
         content = `
-        <table class="table table-bordered tabla_blanca letra_small" align="center">
+        <table class="table table-bordered table-sm table-hover" align="center">
       <tbody><tr valign="top">
         <th>Tabla</th>
         <th>Registros</th>
@@ -145,7 +146,7 @@ function mostrarAdminViaje () {
         <input type="hidden" name="lugar_muestreo" value="Array">
         
        
-        <table class="table table-bordered tabla_blanca letra_small">
+        <table class="table table-bordered table-sm table-hover">
           <tbody><tr>
           <th>Barco</th>
             <th>Fecha-hora recalada</th>
@@ -158,7 +159,7 @@ function mostrarAdminViaje () {
           </tr>
         </tbody></table>
         <br><br><center class="blanco"><b>Seleccione formulario:</b></center><br>
-        <div class="col-md-6"><table align="center" class=" table table-bordered tabla_blanca letra_small"><tbody><tr>
+        <div class="col-md-6"><table align="center" class=" table table-bordered table-sm table-hover"><tbody><tr>
               <th align="left">IDIFOPDW_CM</th><td></td><td>2</td><td>2</td><td>2</td></tr><tr>
               <th align="left">IDIFOPDW_LUGAR</th><td>2</td><td>2</td><td>2</td><td>2</td></tr><tr>
               <th align="left">IDIFOPDW_FLOTA</th><td>2</td><td>2</td><td>2</td><td>2</td></tr><tr>
@@ -183,7 +184,7 @@ function mostrarAdminViaje () {
       case "modificarLlaveLance":
         content = `<form name="formViaje" method="get">    
 
-        <table class="table table-bordered tabla_blanca letra_small">
+        <table class="table table-bordered table-sm table-hover">
           <tbody><tr>
             <th></th>
             <th>Lance actual</th>             
@@ -220,13 +221,13 @@ function mostrarAdminViaje () {
       case "moverMuestreo":
             content = `<form name="formViaje" method="get">
 
-          <table class="table table-bordered tabla_blanca letra_small">
+          <table class="table table-bordered table-sm table-hover">
             <tbody><tr>
               <th></th>
               <th>Viaje actual</th>                           
             </tr>
             <tr>
-              <td>Cï¿½digo Barco:</td>
+              <td>Código Barco:</td>
               <td><input type="hidden" name="cod_barco_orig" id="cod_barco_orig" value="940266">940266 </td>                            
             </tr>            
             <tr>
@@ -248,13 +249,13 @@ function mostrarAdminViaje () {
       case "eliminarMuestreo":
         content = `<form name="formViaje" method="get">
 
-        <table class="table table-bordered tabla_blanca letra_small">
+        <table class="table table-bordered table-sm table-hover">
           <tbody><tr>
             <th></th>
             <th>Viaje actual</th>                           
           </tr>
           <tr>
-            <td>Cï¿½digo Barco:</td>
+            <td>Código Barco:</td>
             <td><input type="hidden" name="cod_barco_orig" id="cod_barco_orig" value="940266">940266 </td>                            
           </tr>            
           <tr>
@@ -276,7 +277,7 @@ function mostrarAdminViaje () {
       case "modificarOrigen":
         content = `<form name="formViaje" method="get">
 
-          <table class="table table-bordered tabla_blanca letra_small">
+          <table class="table table-bordered table-sm table-hover">
             <tbody><tr>
               <th></th>
               <th>Viaje actual</th>                           
@@ -302,7 +303,7 @@ function mostrarAdminViaje () {
     </form>`;
         break;
       case "migrar":
-        content = `<table class="table table-bordered tabla_blanca letra_small" align="center">
+        content = `<table class="table table-bordered table-sm table-hover" align="center">
       <tbody><tr>
             
               <td colspan="2" align="center"><b>Viaje a Migrar<b></b></b></td>
@@ -342,6 +343,13 @@ function mostrarAdminViaje () {
         break;
     }
     dynamicContent.innerHTML = content;
+  });*/
+
+  fetch("templates/AdminViaje.html").then((response) => {
+    response.text().then((html) => {
+      modalTitle.innerHTML = 'Acciones';
+      modalBody.innerHTML = html;
+    });
   });
 
   var modal = new bootstrap.Modal(document.getElementById("infoModal"));

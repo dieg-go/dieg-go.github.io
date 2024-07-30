@@ -2,12 +2,14 @@ function mostrarAdjuntos() {
     const data = {
         totalArchivos: 3,
         adjuntos: [
-            { id: 157721, nombreArchivo: "v3_940266_18_05_2018_20_32.xml", tituloArchivo: "Bitacora" },
-            // { id: 157722, nombreArchivo: "report_2023_03_15.pdf" },
-            { id: 157723, nombreArchivo: "", tituloArchivo: "Muestreo de Proporción de especies" },
-            { id: 157724, nombreArchivo: "", tituloArchivo: "Muestreo de Longitud" },
-            { id: 157724, nombreArchivo: "", tituloArchivo: "Muestreo Biológico" },
-            { id: 157724, nombreArchivo: "Informe 04.pdf", tituloArchivo: "Informe 04" },
+          // { id: 157722, nombreArchivo: "report_2023_03_15.pdf" },
+          { id: 157724, nombreArchivo: "Bit023-12-04 at 12.31.30.jpeg", tituloArchivo: "Bitácora" },
+          { id: 157723, nombreArchivo: "", tituloArchivo: "Muestreo de Proporción de especies" },
+          { id: 157724, nombreArchivo: "", tituloArchivo: "Muestreo de Longitud" },
+          { id: 157724, nombreArchivo: "", tituloArchivo: "Muestreo Biológico" },
+          { id: 157721, nombreArchivo: "v3_940266_18_05_2018_20_32.xml", tituloArchivo: "v3_940266_18_05_2018_20_32.xml" },
+            // { id: 157724, nombreArchivo: "Informe 04.pdf", tituloArchivo: "Informe 04" },
+
         ],
     };
 
@@ -133,6 +135,15 @@ function previsualizarAdjunto(nombreArchivo, tituloArchivo) {
             });
 
         return;
+    }
+
+    if(extension === "jpg" || extension === "jpeg" || extension === "png"){
+        const url = `/adjuntos/${nombreArchivo}`;
+        const img = document.createElement("img");
+        img.src = url;
+        document.getElementById("previewBody").appendChild(img);
+        return;
+
     }
 
     document.getElementById("previewBody").innerHTML = `

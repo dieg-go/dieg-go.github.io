@@ -368,7 +368,7 @@ function cardMuestreoBiologico1() {
                         ])
                 );
 
-            console.log(biologico[0]); // Log the first row
+            // console.log(biologico[0]); // Log the first row
 
             $("#cardMuestreoBiologico1 table").DataTable({
                 data: biologico,
