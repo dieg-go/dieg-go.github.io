@@ -144,7 +144,7 @@ function inicializarTabla() {
                 },
             },
             { data: null, defaultContent: '<button type="button" class="btn btn-outline-primary btnMostrarAdjuntos"><i class="fas fa-paperclip"></i></button>' },
-            // { data: null, defaultContent: '<button type="button" class="btn btn-outline-primary btnMostrarSIEM"><i class="fas fa-columns"></i></button>' },
+            { data: null, defaultContent: '<button type="button" class="btn btn-outline-primary btnMostrarSIEM"><i class="fas fa-columns"></i></button>' },
             { data: null, defaultContent: '<button type="button" class="btn btn-outline-primary btnMostrarAdminViaje"><i class="fa-regular fa-file-lines"></i></button>' },
             { data: null, defaultContent: '<button type="button" class="btn btn-outline-primary btnMostrarDatosHist"><i class="fa-solid fa-vials"></i></button>' },
             { data: null, defaultContent: '<button type="button" class="btn btn-outline-primary btnMostrarCargaXML"><i class="fa-solid fa-upload"></i></button>' },
@@ -160,8 +160,8 @@ function inicializarTabla() {
             { targets: 8, width: "60px", className: "align-middle text-center" },
             { targets: 9, width: "60px", className: "align-middle text-center" },
             { targets: 10, width: "60px", className: "align-middle text-center" },
+            { targets: 11, width: "60px", className: "text-center" },
             { targets: "_all", className: "align-middle" },
-            // { targets: 11, width: "60px", className: "text-center" },
         ],
         language: {
             url: "https://cdn.datatables.net/plug-ins/2.1.0/i18n/es-CL.json",
