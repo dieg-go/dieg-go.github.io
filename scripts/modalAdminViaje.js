@@ -345,7 +345,7 @@ function mostrarAdminViaje () {
     dynamicContent.innerHTML = content;
   });*/
 
-  fetch("templates/AdminViaje.html").then((response) => {
+  fetch("templates/adminViaje.html").then((response) => {
     response.text().then((html) => {
       modalTitle.innerHTML = 'Acciones';
       modalBody.innerHTML = html;
