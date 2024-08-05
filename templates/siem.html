@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <table class="tablaFormulario table table-bordered table-striped table-hover table-sm">
+    <table class="tablaFormulario table table-bordered table-hover table-sm">
         <tbody>
             <tr>
                 <td class="nombre" width="40%"><strong>Seguimiento :</strong></td>
@@ -53,12 +53,12 @@
             </tr>
             <tr></tr>
             <tr>
-                <td text-align="center"><input type="button" value="Volver" onclick="enviarFormulario(document.formSiem, 'viajes_muestreador.php', 'viajes_muestreador.php');" /></td>
-                <td text-align="center">
+                <td><input type="button" value="Volver" onclick="enviarFormulario(document.formSiem, 'viajes_muestreador.php', 'viajes_muestreador.php');" /></td>
+                <td>
                     <input type="button" value="Modificar Viaje" onclick="enviarFormulario(document.formSiem, 'modificar_viaje.php?id_viaje=71995c4ad6&amp;id_checklist=', 'modificar_viaje.php')" />
                 </td>
 
-                <td text-align="center">
+                <td>
                     <input type="button" value="Checklist" onclick="enviarFormulario(document.formSiem, 'ingresar_checklist.php?id_viaje=71995c4ad6&amp;id_checklist=', 'ingresar_checklist.php')" />
                 </td>
             </tr>
@@ -67,184 +67,168 @@
     </table>
 </div>
 
-<div class="table-responsive">
-    <table class="tablaFormulario table table-bordered table-striped table-hover table-sm">
-        <tbody>
-            <tr>
-                <th>Zona</th>
-                <th>Mes</th>
-                <th>Rut Obs.1</th>
-                <th>Rut Obs.2</th>
-                <th>Tipo Actividad</th>
-                <th>Cód. Especie</th>
-                <th>Nro Muestras</th>
-                <th>Nro Ejemplares</th>
-                <th>Nro Estructuras</th>
-                <th>Nro Hojas</th>
-                <th>Observaciones</th>
-                <th>&nbsp;</th>
-            </tr>
-            <tr>
-                <td nowrap="nowrap">Zona de Valdivia</td>
-                <td nowrap="nowrap" text-align="center">4</td>
-                <td nowrap="nowrap">16321187-4</td>
-                <td text-align="center" nowrap="nowrap">&nbsp;</td>
-                <td nowrap="nowrap">
-                    <a href="#" onclick="enviarFormulario(document.formSiem,'modificar_muestreo.php?id_viaje=71995c4ad6&amp;id_muestreo=356363&amp;seguimiento=PCS','modificar_muestreo.php');"
-                        >2 - Muestreo de Longitud</a
-                    >
-                </td>
-                <td nowrap="nowrap" text-align="center">33 - SARDINA COMUN</td>
-                <td text-align="center" nowrap="nowrap">1</td>
-                <td text-align="center">207</td>
-                <td text-align="center">&nbsp;</td>
-                <td text-align="center">1</td>
-                <td>&nbsp;</td>
-                <td>
-                    <input
-                        type="button"
-                        name="eliminar"
-                        value="Eliminar"
-                        onclick="confirmarEliminacion(document.formSiem, '../acciones_siem.php?id_muestreo=356363&amp;retorno=visualizacion/detalle_viaje_tierra.php', '../acciones_siem.php');"
-                    />
-                </td>
-            </tr>
-            <tr>
-                <td nowrap="nowrap">Zona de Valdivia</td>
-                <td nowrap="nowrap" text-align="center">4</td>
-                <td nowrap="nowrap">16321187-4</td>
-                <td text-align="center" nowrap="nowrap">&nbsp;</td>
-                <td nowrap="nowrap">
-                    <a href="#" onclick="enviarFormulario(document.formSiem,'modificar_muestreo.php?id_viaje=71995c4ad6&amp;id_muestreo=356364&amp;seguimiento=PCS','modificar_muestreo.php');"
-                        >3 - Muestreo Biológico</a
-                    >
-                </td>
-                <td nowrap="nowrap" text-align="center">33 - SARDINA COMUN</td>
-                <td text-align="center" nowrap="nowrap">1</td>
-                <td text-align="center">80</td>
-                <td text-align="center">&nbsp;</td>
-                <td text-align="center">1</td>
-                <td>&nbsp;</td>
-                <td>
-                    <input
-                        type="button"
-                        name="eliminar"
-                        value="Eliminar"
-                        onclick="confirmarEliminacion(document.formSiem, '../acciones_siem.php?id_muestreo=356364&amp;retorno=visualizacion/detalle_viaje_tierra.php', '../acciones_siem.php');"
-                    />
-                </td>
-            </tr>
-            <tr>
-                <td nowrap="nowrap">Zona de Valdivia</td>
-                <td nowrap="nowrap" text-align="center">4</td>
-                <td nowrap="nowrap">16321187-4</td>
-                <td text-align="center" nowrap="nowrap">&nbsp;</td>
-                <td nowrap="nowrap">
-                    <a href="#" onclick="enviarFormulario(document.formSiem,'modificar_muestreo.php?id_viaje=71995c4ad6&amp;id_muestreo=356360&amp;seguimiento=PCS','modificar_muestreo.php');"
-                        >2 - Muestreo de Longitud</a
-                    >
-                </td>
-                <td nowrap="nowrap" text-align="center">114 - ANCHOVETA</td>
-                <td text-align="center" nowrap="nowrap">1</td>
-                <td text-align="center">205</td>
-                <td text-align="center">&nbsp;</td>
-                <td text-align="center">1</td>
-                <td>&nbsp;</td>
-                <td>
-                    <input
-                        type="button"
-                        name="eliminar"
-                        value="Eliminar"
-                        onclick="confirmarEliminacion(document.formSiem, '../acciones_siem.php?id_muestreo=356360&amp;retorno=visualizacion/detalle_viaje_tierra.php', '../acciones_siem.php');"
-                    />
-                </td>
-            </tr>
-            <tr>
-                <td nowrap="nowrap">Zona de Valdivia</td>
-                <td nowrap="nowrap" text-align="center">4</td>
-                <td nowrap="nowrap">16321187-4</td>
-                <td text-align="center" nowrap="nowrap">&nbsp;</td>
-                <td nowrap="nowrap">
-                    <a href="#" onclick="enviarFormulario(document.formSiem,'modificar_muestreo.php?id_viaje=71995c4ad6&amp;id_muestreo=356361&amp;seguimiento=PCS','modificar_muestreo.php');"
-                        >3 - Muestreo Biológico</a
-                    >
-                </td>
-                <td nowrap="nowrap" text-align="center">114 - ANCHOVETA</td>
-                <td text-align="center" nowrap="nowrap">1</td>
-                <td text-align="center">80</td>
-                <td text-align="center">&nbsp;</td>
-                <td text-align="center">1</td>
-                <td>&nbsp;</td>
-                <td>
-                    <input
-                        type="button"
-                        name="eliminar"
-                        value="Eliminar"
-                        onclick="confirmarEliminacion(document.formSiem, '../acciones_siem.php?id_muestreo=356361&amp;retorno=visualizacion/detalle_viaje_tierra.php', '../acciones_siem.php');"
-                    />
-                </td>
-            </tr>
-            <tr>
-                <td nowrap="nowrap">Zona de Valdivia</td>
-                <td nowrap="nowrap" text-align="center">4</td>
-                <td nowrap="nowrap">16321187-4</td>
-                <td text-align="center" nowrap="nowrap">&nbsp;</td>
-                <td nowrap="nowrap">
-                    <a href="#" onclick="enviarFormulario(document.formSiem,'modificar_muestreo.php?id_viaje=71995c4ad6&amp;id_muestreo=356362&amp;seguimiento=PCS','modificar_muestreo.php');"
-                        >4 - Muestreo de Otolitos</a
-                    >
-                </td>
-                <td nowrap="nowrap" text-align="center">114 - ANCHOVETA</td>
-                <td text-align="center" nowrap="nowrap">1</td>
-                <td text-align="center">23</td>
-                <td text-align="center">44</td>
-                <td text-align="center">&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>
-                    <input
-                        type="button"
-                        name="eliminar"
-                        value="Eliminar"
-                        onclick="confirmarEliminacion(document.formSiem, '../acciones_siem.php?id_muestreo=356362&amp;retorno=visualizacion/detalle_viaje_tierra.php', '../acciones_siem.php');"
-                    />
-                </td>
-            </tr>
-            <tr>
-                <td nowrap="nowrap">Zona de Valdivia</td>
-                <td nowrap="nowrap" text-align="center">4</td>
-                <td nowrap="nowrap">16321187-4</td>
-                <td text-align="center" nowrap="nowrap">&nbsp;</td>
-                <td nowrap="nowrap">
-                    <a href="#" onclick="enviarFormulario(document.formSiem,'modificar_muestreo.php?id_viaje=71995c4ad6&amp;id_muestreo=356359&amp;seguimiento=PCS','modificar_muestreo.php');"
-                        >1 - Muestreo de Proporción de Especies</a
-                    >
-                </td>
-                <td nowrap="nowrap" text-align="center">&nbsp;</td>
-                <td text-align="center" nowrap="nowrap">1</td>
-                <td text-align="center">&nbsp;</td>
-                <td text-align="center">&nbsp;</td>
-                <td text-align="center">1</td>
-                <td>&nbsp;</td>
-                <td>
-                    <input
-                        type="button"
-                        name="eliminar"
-                        value="Eliminar"
-                        onclick="confirmarEliminacion(document.formSiem, '../acciones_siem.php?id_muestreo=356359&amp;retorno=visualizacion/detalle_viaje_tierra.php', '../acciones_siem.php');"
-                    />
-                </td>
-            </tr>
-            <tr>
-                <td text-align="center" colspan="12">
-                    <input
-                        type="button"
-                        value="Ingresar Muestreo"
-                        name="ingresar_muestreo"
-                        id="ingresar_muestreo"
-                        onclick="enviarFormulario(document.formSiem,'ingresar_muestreo.php','ingresar_muestreo.php');"
-                    />
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<div class="card card-body">
+    <div class="table-responsive">
+        <table class="tablaFormulario table table-hover table-sm align-middle">
+            <tbody class="text-center">
+                <tr>
+                    <th scope="col">Zona</th>
+                    <th scope="col">Mes</th>
+                    <th scope="col">Rut OC 1</th>
+                    <th scope="col">Rut OC 2</th>
+                    <th scope="col">Tipo Actividad</th>
+                    <th scope="col">Cód. Especie</th>
+                    <th scope="col">N° Muestras</th>
+                    <th scope="col">N° Ejemplares</th>
+                    <th scope="col">N° Estructuras</th>
+                    <th scope="col">N° Hojas</th>
+                    <th scope="col">Obs.</th>
+                    <th scope="col">Eliminar</th>
+                </tr>
+                <tr>
+                    <td>Zona de Valdivia</td>
+                    <td>4</td>
+                    <td>16321187-4</td>
+                    <td>&nbsp;</td>
+                    <td>
+                        <a href="#" onclick="enviarFormulario(document.formSiem,'modificar_muestreo.php?id_viaje=71995c4ad6&amp;id_muestreo=356363&amp;seguimiento=PCS','modificar_muestreo.php');"
+                            >2 - Muestreo de Longitud</a
+                        >
+                    </td>
+                    <td>33 - SARDINA COMUN</td>
+                    <td>1</td>
+                    <td>207</td>
+                    <td>&nbsp;</td>
+                    <td>1</td>
+                    <td>&nbsp;</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Zona de Valdivia</td>
+                    <td>4</td>
+                    <td>16321187-4</td>
+                    <td>&nbsp;</td>
+                    <td>
+                        <a href="#" onclick="enviarFormulario(document.formSiem,'modificar_muestreo.php?id_viaje=71995c4ad6&amp;id_muestreo=356364&amp;seguimiento=PCS','modificar_muestreo.php');"
+                            >3 - Muestreo Biológico</a
+                        >
+                    </td>
+                    <td>33 - SARDINA COMUN</td>
+                    <td>1</td>
+                    <td>80</td>
+                    <td>&nbsp;</td>
+                    <td>1</td>
+                    <td>&nbsp;</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Zona de Valdivia</td>
+                    <td>4</td>
+                    <td>16321187-4</td>
+                    <td>&nbsp;</td>
+                    <td>
+                        <a href="#" onclick="enviarFormulario(document.formSiem,'modificar_muestreo.php?id_viaje=71995c4ad6&amp;id_muestreo=356360&amp;seguimiento=PCS','modificar_muestreo.php');"
+                            >2 - Muestreo de Longitud</a
+                        >
+                    </td>
+                    <td>114 - ANCHOVETA</td>
+                    <td>1</td>
+                    <td>205</td>
+                    <td>&nbsp;</td>
+                    <td>1</td>
+                    <td>&nbsp;</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Zona de Valdivia</td>
+                    <td>4</td>
+                    <td>16321187-4</td>
+                    <td>&nbsp;</td>
+                    <td>
+                        <a href="#" onclick="enviarFormulario(document.formSiem,'modificar_muestreo.php?id_viaje=71995c4ad6&amp;id_muestreo=356361&amp;seguimiento=PCS','modificar_muestreo.php');"
+                            >3 - Muestreo Biológico</a
+                        >
+                    </td>
+                    <td>114 - ANCHOVETA</td>
+                    <td>1</td>
+                    <td>80</td>
+                    <td>&nbsp;</td>
+                    <td>1</td>
+                    <td>&nbsp;</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Zona de Valdivia</td>
+                    <td>4</td>
+                    <td>16321187-4</td>
+                    <td>&nbsp;</td>
+                    <td>
+                        <a href="#" onclick="enviarFormulario(document.formSiem,'modificar_muestreo.php?id_viaje=71995c4ad6&amp;id_muestreo=356362&amp;seguimiento=PCS','modificar_muestreo.php');"
+                            >4 - Muestreo de Otolitos</a
+                        >
+                    </td>
+                    <td>114 - ANCHOVETA</td>
+                    <td>1</td>
+                    <td>23</td>
+                    <td>44</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Zona de Valdivia</td>
+                    <td>4</td>
+                    <td>16321187-4</td>
+                    <td>&nbsp;</td>
+                    <td>
+                        <a href="#" onclick="enviarFormulario(document.formSiem,'modificar_muestreo.php?id_viaje=71995c4ad6&amp;id_muestreo=356359&amp;seguimiento=PCS','modificar_muestreo.php');"
+                            >1 - Muestreo de Proporción de Especies</a
+                        >
+                    </td>
+                    <td>&nbsp;</td>
+                    <td>1</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>1</td>
+                    <td>&nbsp;</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="12">
+                        <input
+                            type="button"
+                            value="Ingresar Muestreo"
+                            name="ingresar_muestreo"
+                            id="ingresar_muestreo"
+                            onclick="enviarFormulario(document.formSiem,'ingresar_muestreo.php','ingresar_muestreo.php');"
+                        />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
