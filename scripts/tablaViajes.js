@@ -9,6 +9,9 @@ const datosViaje = [
         lugarMuestreo: "TIERRA",
         recepcion: "07-05-2019 16:46",
         estado: "Error de cruce",
+        fechaHoraZarpe: "19-05-2018 02:00",
+        pesqueria: "21 - PCS ARTESANAL EMPRESA TIERRA",
+        baseDeDatos: "IFOPING",
     },
     {
         codigoBarco: "943370",
@@ -19,6 +22,9 @@ const datosViaje = [
         lugarMuestreo: "EMBARCADO",
         recepcion: "09-11-2023 15:33",
         estado: "Bloqueado",
+        fechaHoraZarpe: "09-11-2023 12:22",
+        pesqueria: "21 - PCS ARTESANAL EMPRESA TIERRA",
+        baseDeDatos: "IFOPING",
     },
     {
         codigoBarco: "940263",
@@ -29,6 +35,9 @@ const datosViaje = [
         lugarMuestreo: "EMBARCADO",
         recepcion: "09-11-2023 16:40",
         estado: "IFOPING",
+        fechaHoraZarpe: "10-11-2023 14:45",
+        pesqueria: "21 - PCS ARTESANAL EMPRESA TIERRA",
+        baseDeDatos: "IFOPING",
     },
     {
         codigoBarco: "943370",
@@ -39,6 +48,9 @@ const datosViaje = [
         lugarMuestreo: "EMBARCADO",
         recepcion: "09-11-2023 16:50",
         estado: "Cruza Con SIEM",
+        fechaHoraZarpe: "10-11-2023 04:20",
+        pesqueria: "21 - PCS ARTESANAL EMPRESA TIERRA",
+        baseDeDatos: "IFOPING",
     },
     {
         codigoBarco: "943370",
@@ -49,6 +61,9 @@ const datosViaje = [
         lugarMuestreo: "EMBARCADO",
         recepcion: "11-11-2023 22:32",
         estado: "IFOPTRX",
+        fechaHoraZarpe: "09-11-2023 13:22",
+        pesqueria: "21 - PCS ARTESANAL EMPRESA TIERRA",
+        baseDeDatos: "IFOPING",
     },
     {
         codigoBarco: "943370",
@@ -59,6 +74,9 @@ const datosViaje = [
         lugarMuestreo: "EMBARCADO",
         recepcion: "12-11-2023 10:43",
         estado: "Cruza Con SIEM",
+        fechaHoraZarpe: "10-11-2023 05:20",
+        pesqueria: "21 - PCS ARTESANAL EMPRESA TIERRA",
+        baseDeDatos: "IFOPING",
     },
     {
         codigoBarco: "945245",
@@ -69,6 +87,9 @@ const datosViaje = [
         lugarMuestreo: "TIERRA",
         recepcion: "13-11-2023 13:09",
         estado: "IFOPING",
+        fechaHoraZarpe: "12-11-2023 10:15",
+        pesqueria: "21 - PCS ARTESANAL EMPRESA TIERRA",
+        baseDeDatos: "IFOPING",
     },
     {
         codigoBarco: "945134",
@@ -79,6 +100,9 @@ const datosViaje = [
         lugarMuestreo: "TIERRA",
         recepcion: "13-11-2023 13:59",
         estado: "Bloqueado",
+        fechaHoraZarpe: "10-11-2023 21:42",
+        pesqueria: "21 - PCS ARTESANAL EMPRESA TIERRA",
+        baseDeDatos: "IFOPING",
     },
     {
         codigoBarco: "940263",
@@ -89,6 +113,9 @@ const datosViaje = [
         lugarMuestreo: "EMBARCADO",
         recepcion: "16-11-2023 12:06",
         estado: "Migrando",
+        fechaHoraZarpe: "10-11-2023 03:45",
+        pesqueria: "21 - PCS ARTESANAL EMPRESA TIERRA",
+        baseDeDatos: "IFOPING",
     },
     {
         codigoBarco: "945055",
@@ -97,7 +124,10 @@ const datosViaje = [
         runOC: "16594002-4",
         nombreOC: "ANTONIO ROBERTO YOVICH MANZO",
         lugarMuestreo: "TIERRA",
-        recepcion: "30-11-2023 11:04    ",
+        fechaHoraZarpe: "09-11-2023 18:30",
+        pesqueria: "21 - PCS ARTESANAL EMPRESA TIERRA",
+        baseDeDatos: "IFOPING",
+        recepcion: "30-11-2023 11:04",
         estado: "Sin Siem",
     },
 ];
@@ -123,16 +153,21 @@ function inicializarTabla() {
                     return meta.row + 1;
                 },
             },
-            { data: "codigoBarco" },
-            { data: "nombreBarco" },
+            // { data: "codigoBarco" },
+            // { data: "nombreBarco" },
             {
                 data: "fechaHoraRecalada",
                 render: function (data) {
                     return `<button type="button" class="btn btn-sm btn-primary w-75 btnMostrarBitacora">${data}</button>`;
                 },
             },
-            { data: "lugarMuestreo" },
-            { data: "recepcion" },
+            {
+                data: "fechaHoraZarpe",
+            },
+            { data: "baseDeDatos" },
+            { data: "pesqueria" },
+            // { data: "lugarMuestreo" },
+            // { data: "recepcion" },
             {
                 data: "estado",
                 render: function (data) {
@@ -160,7 +195,7 @@ function inicializarTabla() {
             { targets: 8, width: "60px", className: "align-middle text-center" },
             { targets: 9, width: "60px", className: "align-middle text-center" },
             { targets: 10, width: "60px", className: "align-middle text-center" },
-            { targets: 11, width: "60px", className: "text-center" },
+            // { targets: 11, width: "60px", className: "text-center" },
             { targets: "_all", className: "align-middle" },
         ],
         language: {
