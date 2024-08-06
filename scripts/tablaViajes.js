@@ -140,6 +140,7 @@ $(document).ready(function () {
             inicializarTabla();
             $('input[name="tablaViajesRangoFechasRecalada"]').daterangepicker();
             $('input[name="tablaViajesRangoFechaRecepcion"]').daterangepicker();
+            // $('[data-toggle="tooltip"]').tooltip();
         });
 });
 
@@ -153,18 +154,18 @@ function inicializarTabla() {
                     return meta.row + 1;
                 },
             },
-            // { data: "codigoBarco" },
-            // { data: "nombreBarco" },
+            { data: "codigoBarco" },
+            { data: "nombreBarco" },
             {
                 data: "fechaHoraRecalada",
                 render: function (data) {
-                    return `<button type="button" class="btn btn-sm btn-primary w-75 btnMostrarBitacora">${data}</button>`;
+                    return `<button type="button" class="btn btn-sm btn-primary text-nowrap btnMostrarBitacora">${data}</button>`;
                 },
             },
             {
                 data: "fechaHoraZarpe",
             },
-            { data: "baseDeDatos" },
+            // { data: "baseDeDatos" },
             { data: "pesqueria" },
             // { data: "lugarMuestreo" },
             // { data: "recepcion" },
@@ -172,17 +173,35 @@ function inicializarTabla() {
                 data: "estado",
                 render: function (data) {
                     let estadoInfo = getEstadoInfo(data);
-                    return `<button type="button" class="btn btn-sm btn-${estadoInfo.class} btnMostrarErrorCruce" style="padding: 0; border: none; background: none;">
-                            <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;">${data}</span>
+                    return `<button type="button" class="btn btn-sm btn-${estadoInfo.class} btnMostrarErrorCruce" style="padding: 0; border: none; background: none;" title="${data}" >
+                            <span style="display: none;">${data}</span>
                             <img src="assets/estados/${estadoInfo.icon}" style="width: 40px; height: 40px;" alt="${data}" />
                     </button>`;
                 },
             },
-            { data: null, defaultContent: '<button type="button" class="btn btn-outline-primary btnMostrarAdjuntos"><i class="fas fa-paperclip"></i></button>' },
-            { data: null, defaultContent: '<button type="button" class="btn btn-outline-primary btnMostrarSIEM"><i class="fas fa-columns"></i></button>' },
-            { data: null, defaultContent: '<button type="button" class="btn btn-outline-primary btnMostrarAdminViaje"><i class="fa-regular fa-file-lines"></i></button>' },
-            { data: null, defaultContent: '<button type="button" class="btn btn-outline-primary btnMostrarDatosHist"><i class="fa-solid fa-vials"></i></button>' },
-            { data: null, defaultContent: '<button type="button" class="btn btn-outline-primary btnMostrarCargaXML"><i class="fa-solid fa-upload"></i></button>' },
+            {
+                data: null,
+                defaultContent: '<button type="button" class="btn btn-outline-primary btnMostrarAdjuntos"><i class="fas fa-paperclip"></i></button>',
+            },
+            {
+                data: null,
+                defaultContent: '<button type="button" class="btn btn-outline-primary btnMostrarSIEM"><i class="fas fa-columns"></i></button>',
+            },
+            {
+                data: null,
+                defaultContent:
+                    '<button type="button" class="btn btn-outline-primary btnMostrarAdminViaje"><i class="fa-regular fa-file-lines"></i></button>',
+            },
+            {
+                data: null,
+                defaultContent:
+                    '<button type="button" class="btn btn-outline-primary btnMostrarDatosHist"><i class="fa-solid fa-vials"></i></button>',
+            },
+            {
+                data: null,
+                defaultContent:
+                    '<button type="button" class="btn btn-outline-primary btnMostrarCargaXML"><i class="fa-solid fa-upload"></i></button>',
+            },
         ],
         columnDefs: [
             { targets: 0, width: "50px", className: "align-middle text-center" },

@@ -90,26 +90,26 @@ document.getElementById("btnEstadisticas").addEventListener("click", function ()
             );
 
             // estadps Chart
-            createChart(
-                document.getElementById("estadosChart").getContext("2d"),
-                "bar",
-                ["Sin Siem", "Cruza Con SIEM", "IFOPTRX", "IFOPING", "Bloqueado", "Migrando", "Error de cruce"],
-                [
-                    {
-                        label: "Viajes",
-                        data: [1, 2, 1, 2, 2, 1, 1],
-                        backgroundColor: [
-                            // '#6c757d', '#28a745', '#17a2b8', '#17a2b8', '#ffc107', '#17a2b8', '#dc3545'
-                            '#C9CBCF', '#4caf50', '#00bcd4', '#4BC0C0', '#ffeb3b', '#FF9F40', '#f44336'
-                          ]
-                    }
+            // createChart(
+            //     document.getElementById("estadosChart").getContext("2d"),
+            //     "bar",
+            //     ["Sin Siem", "Cruza Con SIEM", "IFOPTRX", "IFOPING", "Bloqueado", "Migrando", "Error de cruce"],
+            //     [
+            //         {
+            //             label: "Viajes",
+            //             data: [1, 2, 1, 2, 2, 1, 1],
+            //             backgroundColor: [
+            //                 // '#6c757d', '#28a745', '#17a2b8', '#17a2b8', '#ffc107', '#17a2b8', '#dc3545'
+            //                 '#C9CBCF', '#4caf50', '#00bcd4', '#4BC0C0', '#ffeb3b', '#FF9F40', '#f44336'
+            //               ]
+            //         }
                         
 
-                ],
-                "Estados",
-                5
+            //     ],
+            //     "Estados",
+            //     5
 
-            )
+            // )
 
         $('input[name="estadisticasRangoFechas"]').daterangepicker()
 

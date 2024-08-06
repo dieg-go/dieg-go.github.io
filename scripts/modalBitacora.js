@@ -139,9 +139,9 @@ function inicializarTablaLances() {
             { data: "id" },
             { data: "fechaLance" },
             { data: "especieObjetivo" },
-            { data: "fechaExtraccion" },
-            { data: "longitud" },
-            { data: "latitud" },
+            // { data: "fechaExtraccion" },
+            // { data: "longitud" },
+            // { data: "latitud" },
             {
                 data: "bitacora",
                 render: function (data, type, row) {
@@ -174,27 +174,37 @@ function createDropdown(id, type, data) {
 
     const items = Object.entries(data)
         .map(([key, value]) => {
-            const itemClass = value ? "text-primary" : "text-secondary disabled";
+            const itemClass = value ? "btn-primary" : "btn-outline-secondary disabled";
             return `
-            <li>
-                <a class="dropdown-item small ${itemClass}" 
+                <button type="button" class="btn btn-sm ${itemClass}" style="min-width: 100px;"
                     id="${type}-${key}-${id}" 
                     onclick="showCard('${type}', '${key}', '${id}')">${key}
-                </a>
-            </li>`;
-        })
-        .join("");
+                </button>`;
+        });
+
+    const half = Math.ceil(items.length / 2);
+    const firstHalf = items.slice(0, half).join("");
+    const secondHalf = items.slice(half).join("");
 
     return `
-    <div class="dropdown">
-        <button class="btn ${buttonClass} btn-sm dropdown-toggle" type="button" id="dropdown${type}${id}" data-toggle="dropdown" aria-expanded="false" ${!hasValues ? "disabled" : ""}>
-            <i class="fa-solid fa-ellipsis"></i>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdown${type}${id}">
-            ${items}
-        </ul>
-    </div>
+        <div class="btn-group">
+                ${firstHalf}
+        </div>
+        <div class="btn-group">
+                ${secondHalf}
+        </div>
     `;
+
+    // return `
+    // <div class="dropdown">
+    //     <button class="btn ${buttonClass} btn-sm dropdown-toggle" type="button" id="dropdown${type}${id}" data-toggle="dropdown" aria-expanded="false" ${!hasValues ? "disabled" : ""}>
+    //         <i class="fa-solid fa-ellipsis"></i>
+    //     </button>
+    //     <ul class="dropdown-menu" aria-labelledby="dropdown${type}${id}">
+    //         ${items}
+    //     </ul>
+    // </div>
+    // `;
 }
 
 function showCard(type, key, id) {
@@ -368,7 +378,7 @@ function cardMuestreoBiologico1() {
                         ])
                 );
 
-            // console.log(biologico[0]); // Log the first row
+            // console.log(biologico[0]);
 
             $("#cardMuestreoBiologico1 table").DataTable({
                 data: biologico,
