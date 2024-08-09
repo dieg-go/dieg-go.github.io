@@ -10,7 +10,8 @@ const datosViaje = [
         recepcion: "07-05-2019 16:46",
         estado: "Error de cruce",
         fechaHoraZarpe: "19-05-2018 02:00",
-        pesqueria: "21 - PCS ARTESANAL EMPRESA TIERRA",
+        pesqueria: "1 - EMPRESA PCS ARTESANAL CERCO TIERRA",
+        formulario: "1",
         baseDeDatos: "IFOPING",
     },
     {
@@ -24,6 +25,7 @@ const datosViaje = [
         estado: "Bloqueado",
         fechaHoraZarpe: "09-11-2023 12:22",
         pesqueria: "21 - PCS ARTESANAL EMPRESA TIERRA",
+        formulario: "21",
         baseDeDatos: "IFOPING",
     },
     {
@@ -37,6 +39,7 @@ const datosViaje = [
         estado: "IFOPING",
         fechaHoraZarpe: "10-11-2023 14:45",
         pesqueria: "21 - PCS ARTESANAL EMPRESA TIERRA",
+        formulario: "21",
         baseDeDatos: "IFOPING",
     },
     {
@@ -50,6 +53,7 @@ const datosViaje = [
         estado: "Cruza Con SIEM",
         fechaHoraZarpe: "10-11-2023 04:20",
         pesqueria: "21 - PCS ARTESANAL EMPRESA TIERRA",
+        formulario: "21",
         baseDeDatos: "IFOPING",
     },
     {
@@ -63,6 +67,7 @@ const datosViaje = [
         estado: "IFOPTRX",
         fechaHoraZarpe: "09-11-2023 13:22",
         pesqueria: "21 - PCS ARTESANAL EMPRESA TIERRA",
+        formulario: "21",
         baseDeDatos: "IFOPING",
     },
     {
@@ -76,6 +81,7 @@ const datosViaje = [
         estado: "Cruza Con SIEM",
         fechaHoraZarpe: "10-11-2023 05:20",
         pesqueria: "21 - PCS ARTESANAL EMPRESA TIERRA",
+        formulario: "21",
         baseDeDatos: "IFOPING",
     },
     {
@@ -89,6 +95,7 @@ const datosViaje = [
         estado: "IFOPING",
         fechaHoraZarpe: "12-11-2023 10:15",
         pesqueria: "21 - PCS ARTESANAL EMPRESA TIERRA",
+        formulario: "21",
         baseDeDatos: "IFOPING",
     },
     {
@@ -102,6 +109,7 @@ const datosViaje = [
         estado: "Bloqueado",
         fechaHoraZarpe: "10-11-2023 21:42",
         pesqueria: "21 - PCS ARTESANAL EMPRESA TIERRA",
+        formulario: "21",
         baseDeDatos: "IFOPING",
     },
     {
@@ -115,6 +123,7 @@ const datosViaje = [
         estado: "Migrando",
         fechaHoraZarpe: "10-11-2023 03:45",
         pesqueria: "21 - PCS ARTESANAL EMPRESA TIERRA",
+        formulario: "21",
         baseDeDatos: "IFOPING",
     },
     {
@@ -126,6 +135,7 @@ const datosViaje = [
         lugarMuestreo: "TIERRA",
         fechaHoraZarpe: "09-11-2023 18:30",
         pesqueria: "21 - PCS ARTESANAL EMPRESA TIERRA",
+        formulario: "21",
         baseDeDatos: "IFOPING",
         recepcion: "30-11-2023 11:04",
         estado: "Sin Siem",
@@ -163,7 +173,8 @@ function inicializarTabla() {
                 data: "fechaHoraZarpe",
             },
             // { data: "baseDeDatos" },
-            { data: "pesqueria" },
+            // { data: "pesqueria" },
+            { data: "formulario" },
             // { data: "lugarMuestreo" },
             // { data: "recepcion" },
             {
@@ -186,15 +197,18 @@ function inicializarTabla() {
             },
             {
                 data: null,
-                defaultContent: '<button type="button" class="btn btn-outline-primary btnMostrarAdminViaje"><i class="fa-regular fa-file-lines"></i></button>',
+                defaultContent:
+                    '<button type="button" class="btn btn-outline-primary btnMostrarAdminViaje"><i class="fa-regular fa-file-lines"></i></button>',
             },
             {
                 data: null,
-                defaultContent: '<button type="button" class="btn btn-outline-primary btnMostrarDatosHist"><i class="fa-solid fa-vials"></i></button>',
+                defaultContent:
+                    '<button type="button" class="btn btn-outline-primary btnMostrarDatosHist"><i class="fa-solid fa-vials"></i></button>',
             },
             {
                 data: null,
-                defaultContent: '<button type="button" class="btn btn-outline-primary btnMostrarCargaXML"><i class="fa-solid fa-upload"></i></button>',
+                defaultContent:
+                    '<button type="button" class="btn btn-outline-primary btnMostrarCargaXML"><i class="fa-solid fa-upload"></i></button>',
             },
         ],
         columnDefs: [

@@ -133,7 +133,7 @@ function mostrarBitacora() {
 }
 
 function inicializarTablaLances() {
-    let table = $("#tablaLances").DataTable({
+    $("#tablaLances").DataTable({
         data: lances,
         columns: [
             { data: "id" },
@@ -145,7 +145,14 @@ function inicializarTablaLances() {
             {
                 data: null,
                 render: function (data, type, row) {
-                    return '<button type="button" class="btn btn-sm btn-outline-primary" onClick="mostrarMapa(' + row.longitud + ',' + row.latitud + ')"><i class="fas fa-map-marker-alt"></i></button>';
+                    return (
+                        '<button type="button" class="btn btn-sm btn-outline-primary" onClick="mostrarMapa(' +
+                        row.longitud +
+                        "," +
+                        row.latitud +
+                        "," +
+                        row.id +')"><i class="fas fa-map-marker-alt"></i></button>'
+                    );
                 },
             },
             {
@@ -161,7 +168,15 @@ function inicializarTablaLances() {
                 },
             },
         ],
-        columnsDefs: [{ targets: "_all", className: "align-middle" }],
+        columnDefs: [
+            { targets: 0, className: "align-middle text-left" },
+            { targets: 1, className: "align-middle text-left" },
+            { targets: 2, className: "align-middle text-left" },
+            { targets: 3, className: "align-middle text-left" },
+            { targets: 4, className: "align-middle text-left" },
+            { targets: 5, className: "align-middle text-center" },
+            { targets: "_all", className: "align-middle" },
+        ],
         language: {
             url: "https://cdn.datatables.net/plug-ins/2.1.0/i18n/es-CL.json",
         },
@@ -174,11 +189,10 @@ function inicializarTablaLances() {
     cardMuestreoBiologico1();
 }
 
-function mostrarMapa(lat, lng) {
-    var win = window.open("../templates/mapa.html?lat=" + lat + "&lng=" + lng, "MapWindow", "width=600,height=400");
-
+function mostrarMapa(lat, lng, id) {
+    var win = window.open("../templates/mapa.html?lat=" + lat + "&lng=" + lng + "&id=" + id, "MapWindow", "width=600,height=420");
 }
- 
+
 function createDropdown(id, type, data) {
     const hasValues = Object.values(data).some((value) => value !== "");
     // const buttonClass = hasValues ? "btn-primary" : "btn-secondary";

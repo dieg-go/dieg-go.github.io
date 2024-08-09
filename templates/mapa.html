@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!-- mapear Lances -->
+ <!-- laces cabecera fijas
+ entradas 199
+ estaddis fijos -->
+
 <html>
 <head>
     <title>Simple Map</title>
@@ -12,15 +17,16 @@
 <script>
     const lat = new URLSearchParams(window.location.search).get('lat');
     const lng = new URLSearchParams(window.location.search).get('lng');
+    const id = new URLSearchParams(window.location.search).get('id');
     
-    var map = L.map('mapid').setView([lat, lng], 13);
+    var map = L.map('mapid').setView([lat, lng], 2);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors'
     }).addTo(map);
 
     L.marker([lat, lng]).addTo(map)
-        .bindPopup("You are here.")
+        .bindPopup("Lance " + id)
         .openPopup();
 </script>
 
