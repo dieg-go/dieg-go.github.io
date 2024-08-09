@@ -138,9 +138,6 @@ $(document).ready(function () {
         .then((data) => {
             document.getElementById("cardBodyGrilla").innerHTML = data;
             inicializarTabla();
-            $('input[name="tablaViajesRangoFechasRecalada"]').daterangepicker();
-            $('input[name="tablaViajesRangoFechaRecepcion"]').daterangepicker();
-            // $('[data-toggle="tooltip"]').tooltip();
         });
 });
 
@@ -173,9 +170,9 @@ function inicializarTabla() {
                 data: "estado",
                 render: function (data) {
                     let estadoInfo = getEstadoInfo(data);
-                    return `<button type="button" class="btn btn-sm btn-${estadoInfo.class} btnMostrarErrorCruce" style="padding: 0; border: none; background: none;" title="${data}" >
+                    return `<button type="button" class="btn btn-sm btn-${estadoInfo.class} btnMostrarErrorCruce" style="padding: 0; border: none; background: none;" >
                             <span style="display: none;">${data}</span>
-                            <img src="assets/estados/${estadoInfo.icon}" style="width: 40px; height: 40px;" alt="${data}" />
+                            <img src="assets/estados/${estadoInfo.icon}" style="width: 40px; height: 40px;" alt="${data}" data-toggle="tooltip" title="${data}"/>
                     </button>`;
                 },
             },
@@ -189,18 +186,15 @@ function inicializarTabla() {
             },
             {
                 data: null,
-                defaultContent:
-                    '<button type="button" class="btn btn-outline-primary btnMostrarAdminViaje"><i class="fa-regular fa-file-lines"></i></button>',
+                defaultContent: '<button type="button" class="btn btn-outline-primary btnMostrarAdminViaje"><i class="fa-regular fa-file-lines"></i></button>',
             },
             {
                 data: null,
-                defaultContent:
-                    '<button type="button" class="btn btn-outline-primary btnMostrarDatosHist"><i class="fa-solid fa-vials"></i></button>',
+                defaultContent: '<button type="button" class="btn btn-outline-primary btnMostrarDatosHist"><i class="fa-solid fa-vials"></i></button>',
             },
             {
                 data: null,
-                defaultContent:
-                    '<button type="button" class="btn btn-outline-primary btnMostrarCargaXML"><i class="fa-solid fa-upload"></i></button>',
+                defaultContent: '<button type="button" class="btn btn-outline-primary btnMostrarCargaXML"><i class="fa-solid fa-upload"></i></button>',
             },
         ],
         columnDefs: [
@@ -221,6 +215,10 @@ function inicializarTabla() {
             url: "https://cdn.datatables.net/plug-ins/2.1.0/i18n/es-CL.json",
         },
         responsive: true,
+        drawCallback: function (settings) {
+            // console.log('drawCallback');
+            $('[data-toggle="tooltip"]').tooltip();
+        },
     });
 
     $("#tablaViajes").on("click", ".btnMostrarBitacora", mostrarBitacora);
@@ -230,6 +228,9 @@ function inicializarTabla() {
     $("#tablaViajes").on("click", ".btnMostrarAdminViaje", mostrarAdminViaje);
     $("#tablaViajes").on("click", ".btnMostrarDatosHist", mostrarDatosHist);
     $("#tablaViajes").on("click", ".btnMostrarCargaXML", mostrarCargaXML);
+
+    $('input[name="tablaViajesRangoFechasRecalada"]').daterangepicker();
+    $('input[name="tablaViajesRangoFechaRecepcion"]').daterangepicker();
 }
 function getEstadoInfo(estado) {
     switch (estado) {

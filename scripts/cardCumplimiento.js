@@ -13,6 +13,7 @@ document.getElementById("btnCumplimiento").addEventListener("click", function ()
 
   <h5 class="mb-3">Pelagicos Zona Norte </h5>
   <h6 class="text-muted">Marzo 2024</h6>
+  <div class="table-responsive">
   <table class="table table-sm table-hover">
     <tbody>
       <tr><th>Mtr Longitud</th><td class="text-end fw-bold">15</td></tr>
@@ -23,6 +24,7 @@ document.getElementById("btnCumplimiento").addEventListener("click", function ()
       <tr><th>N Otolitos</th><td class="text-end fw-bold">30</td></tr>
     </tbody>
   </table>
+  </div>
 
     `;
 });

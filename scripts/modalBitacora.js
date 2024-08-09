@@ -6,8 +6,8 @@ const lances = [
         fechaLance: "18-05-2018 10:00",
         especieObjetivo: "Anchoveta",
         fechaExtraccion: "18-05-2018 10:00",
-        latitud: "10.0000",
-        longitud: "-70.0000",
+        latitud: "39.2300",
+        longitud: "73.1800",
         bitacora: {
             Captura: "captura",
             Descarte: "",
@@ -140,8 +140,14 @@ function inicializarTablaLances() {
             { data: "fechaLance" },
             { data: "especieObjetivo" },
             // { data: "fechaExtraccion" },
-            // { data: "longitud" },
-            // { data: "latitud" },
+            { data: "longitud" },
+            { data: "latitud" },
+            {
+                data: null,
+                render: function (data, type, row) {
+                    return '<button type="button" class="btn btn-sm btn-outline-primary" onClick="mostrarMapa(' + row.longitud + ',' + row.latitud + ')"><i class="fas fa-map-marker-alt"></i></button>';
+                },
+            },
             {
                 data: "bitacora",
                 render: function (data, type, row) {
@@ -168,32 +174,36 @@ function inicializarTablaLances() {
     cardMuestreoBiologico1();
 }
 
+function mostrarMapa(lat, lng) {
+    var win = window.open("../templates/mapa.html?lat=" + lat + "&lng=" + lng, "MapWindow", "width=600,height=400");
+
+}
+ 
 function createDropdown(id, type, data) {
     const hasValues = Object.values(data).some((value) => value !== "");
-    const buttonClass = hasValues ? "btn-primary" : "btn-secondary";
+    // const buttonClass = hasValues ? "btn-primary" : "btn-secondary";
 
-    const items = Object.entries(data)
-        .map(([key, value]) => {
-            const itemClass = value ? "btn-primary" : "btn-outline-secondary disabled";
-            return `
-                <button type="button" class="btn btn-sm ${itemClass}" style="min-width: 100px;"
-                    id="${type}-${key}-${id}" 
-                    onclick="showCard('${type}', '${key}', '${id}')">${key}
+    const items = Object.entries(data).map(([key, value]) => {
+        const itemClass = value ? "btn-primary" : "btn-outline-secondary disabled";
+        return `
+                <button type="button" class="btn btn-sm w-100 mx-1 my-1 ${itemClass}"
+                    id="${type}-${key}-${id}"
+                    onclick="window.open('/templates/extraccion/${type}${key}${id}.html',  '_blank')">${key}
                 </button>`;
-        });
+    });
 
     const half = Math.ceil(items.length / 2);
     const firstHalf = items.slice(0, half).join("");
     const secondHalf = items.slice(half).join("");
 
     return `
-        <div class="btn-group">
-                ${firstHalf}
+        <div class="d-flex justify-content-between">
+            ${firstHalf}
         </div>
-        <div class="btn-group">
-                ${secondHalf}
-        </div>
-    `;
+
+        <div class="d-flex justify-content-between">
+            ${secondHalf}
+        </div>`;
 
     // return `
     // <div class="dropdown">
