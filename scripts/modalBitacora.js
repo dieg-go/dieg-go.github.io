@@ -133,28 +133,28 @@ function mostrarBitacora() {
 }
 
 function inicializarTablaLances() {
-    $("#tablaLances").DataTable({
+    var table = $("#tablaLances").DataTable({
         data: lances,
         columns: [
             { data: "id" },
             { data: "fechaLance" },
             { data: "especieObjetivo" },
             // { data: "fechaExtraccion" },
-            { data: "longitud" },
-            { data: "latitud" },
-            {
-                data: null,
-                render: function (data, type, row) {
-                    return (
-                        '<button type="button" class="btn btn-sm btn-outline-primary" onClick="mostrarMapa(' +
-                        row.longitud +
-                        "," +
-                        row.latitud +
-                        "," +
-                        row.id +')"><i class="fas fa-map-marker-alt"></i></button>'
-                    );
-                },
-            },
+            // { data: "longitud" },
+            // { data: "latitud" },
+            // {
+            //     data: null,
+            //     render: function (data, type, row) {
+            //         return (
+            //             '<button type="button" class="btn btn-sm btn-outline-primary" onClick="mostrarMapa(' +
+            //             row.longitud +
+            //             "," +
+            //             row.latitud +
+            //             "," +
+            //             row.id +')"><i class="fas fa-map-marker-alt"></i></button>'
+            //         );
+            //     },
+            // },
             {
                 data: "bitacora",
                 render: function (data, type, row) {
@@ -174,13 +174,21 @@ function inicializarTablaLances() {
             { targets: 2, className: "align-middle text-left" },
             { targets: 3, className: "align-middle text-left" },
             { targets: 4, className: "align-middle text-left" },
-            { targets: 5, className: "align-middle text-center" },
+            // { targets: 5, className: "align-middle text-center" },
             { targets: "_all", className: "align-middle" },
         ],
         language: {
             url: "https://cdn.datatables.net/plug-ins/2.1.0/i18n/es-CL.json",
         },
         responsive: true,
+        fixedHeader: true,
+        scrollY: 300,
+        scrollX: true,
+        scroller: true        
+    });
+
+    $('#tablaLance_weapper').on('scroll', function () {
+        table.fixedHeader.adjust();
     });
 
     crearCardBitacoraCaptura1();
@@ -190,7 +198,7 @@ function inicializarTablaLances() {
 }
 
 function mostrarMapa(lat, lng, id) {
-    var win = window.open("../templates/mapa.html?lat=" + lat + "&lng=" + lng + "&id=" + id, "MapWindow", "width=600,height=420");
+    var win = window.open("../templates/mapa.html?lat=" + lat + "&lng=" + lng + "&id=" + id, "Lances", "resizable=false,width=600,height=420");
 }
 
 function createDropdown(id, type, data) {
@@ -310,6 +318,8 @@ function crearCardMuestreoLongitud1() {
                     { title: "E_5" },
                     { title: "N_INDIVIDUOS" },
                 ],
+                responsive: true,
+                fixedHeader: true
             });
 
             // $("#cardMuestreoLongitud1").show();
@@ -359,6 +369,8 @@ function cardMuestreoProporcion1() {
                     { title: "LUGAR_MUESTREO_PE" },
                     { title: "PESO_TOTAL_MUESTRA_PE" },
                 ],
+                responsive: true,
+                fixedHeader: true
             });
 
             // $("#cardBitacoraProporcion1").show();
@@ -428,6 +440,8 @@ function cardMuestreoBiologico1() {
                     { title: "TIPO_MUESTRA_BIO" },
                     { title: "TIPO_LONGITUD_BIO" },
                 ],
+                responsive: true,
+                fixedHeader: true
             });
 
             $("#cardBitacoraBiologico").show();

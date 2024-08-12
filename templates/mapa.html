@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <!-- mapear Lances -->
- <!-- laces cabecera fijas
+<!-- laces cabecera fijas
  entradas 199
  estaddis fijos -->
 
 <html>
-<head>
-    <title>Simple Map</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-</head>
-<body>
+    <head>
+        <title>Simple Map</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    </head>
+    <body>
+        <div id="mapid" style="height: 400px"></div>
 
-<div id="mapid" style="height: 400px;"></div>
+        <script>
+            const lat = new URLSearchParams(window.location.search).get("lat");
+            const lng = new URLSearchParams(window.location.search).get("lng");
+            const id = new URLSearchParams(window.location.search).get("id");
 
-<script>
-    const lat = new URLSearchParams(window.location.search).get('lat');
-    const lng = new URLSearchParams(window.location.search).get('lng');
-    const id = new URLSearchParams(window.location.search).get('id');
-    
-    var map = L.map('mapid').setView([lat, lng], 2);
+            const lances = [
+                { lat: -36.0, lng: -74.0, id: 1 },
+                { lat: -36.0, lng: -73.8, id: 2 },
+                { lat: -35.9, lng: -73.8, id: 3 },
+                { lat: -35.9, lng: -74.0, id: 4 },
+            ];
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
-    }).addTo(map);
+            var map = L.map("mapid").setView([lances[0].lat, lances[0].lng], 8);
 
-    L.marker([lat, lng]).addTo(map)
-        .bindPopup("Lance " + id)
-        .openPopup();
-</script>
+            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                attribution: "© OpenStreetMap contributors",
+            }).addTo(map);
 
-</body>
+            var polyline = L.polyline(lances.map(lance => [lance.lat, lance.lng]), {color: 'blue', weight: 3}).addTo(map);
+            for (let i = 0; i < lances.length; i++) {
+                if (i == 0) {
+                    L.marker([lances[i].lat, lances[i].lng])
+                        .addTo(map)
+                        .bindPopup("Lance " + lances[i].id)
+                        .openPopup();
+                }
+                L.marker([lances[i].lat, lances[i].lng])
+                    .addTo(map)
+                    .bindPopup("Lance " + lances[i].id);
+            }
+
+        </script>
+    </body>
 </html>
