@@ -59,16 +59,11 @@
     <div class="card-header">
         <h5 class="card-title">Lances</h5>
         <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
-
-            <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                <i class="fas fa-minus"></i>
-            </button>
-
-            <button type="button" class="btn btn-tool" title="Ver en mapa" onclick="mostrarMapa()">
+            <button type="button" class="btn btn-tool" data-toggle="tooltip" data-placement="top" title="Ver en mapa" onclick="mostrarMapa()">
                 <i class="fas fa-map-marker-alt"></i>
             </button>
-            
+
+            <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
         </div>
     </div>
 
@@ -77,7 +72,7 @@
             <table class="table table-hover table-sm my-5" id="tablaLances">
                 <thead>
                     <tr>
-                        <th>Nro</th>
+                        <th>#</th>
                         <th>Fecha Lance</th>
                         <th>Especie Objetivo</th>
                         <!-- <th>Fecha Extraccion</th> -->

@@ -130,6 +130,10 @@ function mostrarBitacora() {
 
     var modal = new bootstrap.Modal(document.getElementById("infoModal"));
     modal.show();
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+      
 }
 
 function inicializarTablaLances() {
